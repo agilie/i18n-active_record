@@ -9,7 +9,7 @@ module I18n
     #
     #   create_table :translations do |t|
     #     t.string :locale
-    #     t.string :key
+    #     t.string :msg_key
     #     t.text   :value
     #     t.text   :interpolations
     #     t.boolean :is_proc, :default => false
@@ -61,7 +61,7 @@ module I18n
           end
 
           def lookup(keys, *separator)
-            column_name = connection.quote_column_name('key')
+            column_name = connection.quote_column_name('msg_key')
             keys = Array(keys).map! { |key| key.to_s }
 
             unless separator.empty?
