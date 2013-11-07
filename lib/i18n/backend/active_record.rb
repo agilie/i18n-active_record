@@ -35,7 +35,7 @@ module I18n
 
           if result.empty?
             nil
-          elsif result.first.key == key
+          elsif result.first.msg_key == key
             result.first.value
           else
             chop_range = (key.size + FLATTEN_SEPARATOR.size)..-1
